@@ -1,0 +1,72 @@
+/* pages/cal/cal.wxss */
+.content {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ccc;
+    font-family: "Microsoft YaHei";
+    overflow-x: hidden;
+    font-size: 100%;
+}
+.layout-top{
+    width: 100%;
+    margin-bottom: 50rpx;
+    height: 10vh;
+}
+.layout-middle{
+    width: 100%;
+    height: 90vh;
+}
+.screen {
+    text-align: right;
+    width: 100%;
+    line-height: 200rpx;
+    padding: 0 10rpx;
+    font-weight: bold;
+    box-sizing: border-box;
+    border-top: 1px solid #fff;
+}
+.btnGroup {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    font-size: 200%;
+    width: 100%;
+    height: 16.66%;
+    background-color: #fff;
+}
+.item {
+    width:33%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 1px;
+    margin-right: 1px;
+}
+.item:active {
+    background-color: #ff0000;
+}
+.zero{
+    width: 50%;
+}
+.orange {
+    color: #fef4e9;
+    background: #f78d1d;
+    font-weight: bold;
+}
+.blue {
+    color:#d9eef7;
+    background-color: #0095cd;
+}
+.iconBtn{
+    display: flex;
+}
+.icon{
+   display: flex;
+   align-items: center;
+   width:100%;
+   justify-content: center;
+}
+

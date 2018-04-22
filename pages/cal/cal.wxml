@@ -1,0 +1,37 @@
+<!--计算页面-->
+<view class="content">
+  <view class="layout-top" style="font-size:180%">
+    {{titleMsg}}
+  </view>
+    
+  <view class="layout-middle">
+    <view class="btnGroup">
+     <view class="screen">
+       {{screenData}}
+      </view>
+     </view>
+    <view class="btnGroup">
+      <view class="item blue" bindtap="clickBtn" id="{{id7}}">7</view>
+      <view class="item blue" bindtap="clickBtn" id="{{id8}}">8</view>
+      <view class="item blue" bindtap="clickBtn" id="{{id9}}">9</view>
+    </view>
+    <view class="btnGroup">
+      <view class="item blue" bindtap="clickBtn" id="{{id4}}">4</view>
+      <view class="item blue" bindtap="clickBtn" id="{{id5}}">5</view>
+      <view class="item blue" bindtap="clickBtn" id="{{id6}}">6</view>
+    </view>
+    <view class="btnGroup">
+      <view class="item blue" bindtap="clickBtn" id="{{id1}}">1</view>
+      <view class="item blue" bindtap="clickBtn" id="{{id2}}">2</view>
+      <view class="item blue" bindtap="clickBtn" id="{{id3}}">3</view>
+    </view>
+    <view class="btnGroup">
+      <view class="item blue zero" bindtap="clickBtn" id="{{id0}}">0</view>
+      <view class="item zero orange" bindtap="clickBtn" id="{{idb}}">←</view>
+    </view>
+    <view class="btnGroup">
+      <view class="item orange" style="width:100%" bindtap="goto"> 下一步 </view>
+    </view>
+  </view>
+
+</view>

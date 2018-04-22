@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<view class="contain">
+  <view class="title brown">
+   <text>请选择:</text>
+  </view>
+  <view class="btnGroup">
+    <button class="blue" bindtap="calMac">计算要安排多少台机</button>
+  </view>
+  <view class="btnGroup">
+    <button class="orange">计算能做多少件衣服</button>
+  </view>
+  <view class="btnGroup">
+    <button class="pink">计算要多久才能完成</button>
+  </view>
+    <view class="btnGroup">
+    <button bindtap="scanNum">扫一扫</button>
+  </view>
+</view>

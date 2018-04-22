@@ -1,0 +1,42 @@
+/**index.wxss**/
+.contain {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: #ccc; */
+    font-family: "Microsoft YaHei";
+    overflow-x: hidden;
+    font-size: 200%;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 12%;
+}
+
+.btnGroup {
+  height: 15%;
+  font-size: 200%;
+}
+
+.blue {
+    color: #d9eef7;
+    background-color: #0095cd;
+}
+
+.orange {
+    color:  #d9eef7;
+    background: #f78d1d;
+}
+
+.pink {
+  color:  #d9eef7;
+  background: #EE6AA7;
+}
+
+.brown {
+  color: #8B1A1A;
+}
