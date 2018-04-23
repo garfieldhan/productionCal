@@ -1,2 +1,18 @@
 <!--pages/result/result.wxml-->
-<text>pages/result/result.wxml</text>
+
+<view>
+  <text>每件时间为:</text>
+  <text>{{perTime}}</text>
+</view>
+<view>
+  <text>做货所用的天数为:</text>
+  <text>{{finTime}}</text>
+</view>
+<view>
+  <text>总件数为:</text>
+  <text>{{cloNum}}</text>
+</view>
+<view>
+  <text>开机台数为:</text>
+  <text>{{machNum}}</text>
+</view>

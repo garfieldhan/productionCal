@@ -8,14 +8,45 @@ Page({
     titleMsg: ""
   },
 
+  onShow: function (options) {
+    //初始化数据
+    wx.setStorageSync("stepRecord", "0");
+    wx.setStorageSync("perTime", "0");
+    wx.setStorageSync("finTime", "0");
+    wx.setStorageSync("cloNum", "0");
+    wx.setStorageSync("machNum", "0")
+  },
+
   calMac: function(){
     var titleText = this.data.titleMsg;
-    titleText="请输入一件衣服的时间:";
+    titleText="请输入一件衣服的时间";
     this.setData({"titleMsg": titleText});
     wx.setStorageSync("titleMsg", this.data.titleMsg);
-    wx.setStorageSync("stepRecord", 1);  //记录到达的页面数
+    wx.setStorageSync("stepRecord", "mac-1");  //记录到达的页面数
     wx.navigateTo({
     url: '../cal/cal'
+    })
+  },
+
+  calClo: function () {
+    var titleText = this.data.titleMsg;
+    titleText = "请输入一件衣服的时间:";
+    this.setData({ "titleMsg": titleText });
+    wx.setStorageSync("titleMsg", this.data.titleMsg);
+    wx.setStorageSync("stepRecord", "clo-1");  //记录到达的页面数
+    wx.navigateTo({
+      url: '../cal/cal'
+    })
+  },
+
+  calTime: function () {
+    var titleText = this.data.titleMsg;
+    titleText = "请输入一件衣服的时间:";
+    this.setData({ "titleMsg": titleText });
+    wx.setStorageSync("titleMsg", this.data.titleMsg);
+    wx.setStorageSync("stepRecord", "time-1");  //记录到达的页面数
+    wx.navigateTo({
+      url: '../cal/cal'
     })
   },
 

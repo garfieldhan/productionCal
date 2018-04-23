@@ -25,14 +25,27 @@ Page({
    */
   onLoad: function (options) {
     var stepRecord = wx.getStorageSync('stepRecord');
-    console.log("当前是第"+stepRecord+"步");
-    if (stepRecord == 1){
+    if (stepRecord == "mac-1" || stepRecord == "clo-1" || stepRecord == "time-1"){
       var titleMsg = wx.getStorageSync('titleMsg');
       this.setData({ "titleMsg": titleMsg });
-    } else if (stepRecord == 2){
-      this.setData({ "titleMsg": "2" });
-    } else if (stepRecord == 3){
-      this.setData({ "titleMsg": "3" });
+
+    //↓计算安排多少台机
+    } else if (stepRecord == "mac-2"){
+      this.setData({ "titleMsg": "请输入做货天数" });
+    } else if (stepRecord == "mac-3") {
+      this.setData({ "titleMsg": "请输入总件数" });
+    
+    //↓计算做多少件衣服
+    } else if (stepRecord == "clo-2"){
+      this.setData({ "titleMsg": "请输入开机台数" });
+    } else if (stepRecord == "clo-3") {
+      this.setData({ "titleMsg": "请输入做货天数" });
+
+    //↓计算做要做多少天
+    } else if (stepRecord == "time-2") {
+      this.setData({ "titleMsg": "请输入开机台数" });
+    } else if (stepRecord == "time-3") {
+      this.setData({ "titleMsg": "请输入总件数" });
     }
   },
 
@@ -46,6 +59,12 @@ Page({
    * 生命周期函数--监听页面显示(页面显示)
    */
   onShow: function () {
+    var stepRecord = wx.getStorageSync('stepRecord');
+    console.log("=========当前是第" + stepRecord + "步===============");
+    console.log("每件时间:" + wx.getStorageSync("perTime"));
+    console.log("货期:" + wx.getStorageSync("finTime"));
+    console.log("总件数:" + wx.getStorageSync("cloNum"));
+    console.log("开机台数:" + wx.getStorageSync("machNum"));
   },
 
   /**
@@ -58,6 +77,20 @@ Page({
    * 生命周期函数--监听页面卸载(页面关闭)
    */
   onUnload: function () {
+    var stepRecord = wx.getStorageSync('stepRecord');
+    if (stepRecord == "mac-3") {
+      wx.setStorageSync("stepRecord", "mac-2");
+    } else if (stepRecord == "mac-2") {
+      wx.setStorageSync("stepRecord", "mac-1");
+    } else if (stepRecord == "clo-3") {
+      wx.setStorageSync("stepRecord", "clo-2");
+    } else if (stepRecord == "clo-2") {
+      wx.setStorageSync("stepRecord", "clo-1");
+    } else if (stepRecord == "time-3") {
+      wx.setStorageSync("stepRecord", "time-2");
+    } else if (stepRecord == "time-2") {
+      wx.setStorageSync("stepRecord", "time-1");
+    }
   },
 
   /**
@@ -105,12 +138,65 @@ Page({
 
   goto: function () {
     var stepRecord = wx.getStorageSync('stepRecord');
-    if (stepRecord<4){
-      wx.setStorageSync("stepRecord", stepRecord+1);  //每点一次"下一步",记录数就+1
+    var data = this.data.screenData;
+
+
+    //↓计算安排多少台机
+    if (stepRecord=="mac-1"){
+      wx.setStorageSync("stepRecord", "mac-2");
+      wx.setStorageSync("perTime", data);
       wx.navigateTo({
         url: '../cal/cal',
       })
-    } else {
+    } else if (stepRecord == "mac-2"){
+      wx.setStorageSync("stepRecord", "mac-3");
+      wx.setStorageSync("finTime", data);
+      wx.navigateTo({
+        url: '../cal/cal',
+      })
+    } else if (stepRecord == "mac-3"){
+      wx.setStorageSync("stepRecord", "mac-4");
+      wx.setStorageSync("cloNum", data);
+      wx.navigateTo({
+        url: '../result/result',
+      })
+
+    //↓计算做多少件衣服
+    } else if (stepRecord == "clo-1"){
+      wx.setStorageSync("stepRecord", "clo-2");
+      wx.setStorageSync("perTime", data);
+      wx.navigateTo({
+        url: '../cal/cal',
+      })
+    } else if (stepRecord == "clo-2") {
+      wx.setStorageSync("stepRecord", "clo-3");
+      wx.setStorageSync("machNum", data);
+      wx.navigateTo({
+        url: '../cal/cal',
+      })
+    } else if (stepRecord == "clo-3") {
+      wx.setStorageSync("stepRecord", "clo-4");
+      wx.setStorageSync("finTime", data);
+      wx.navigateTo({
+        url: '../result/result',
+      })
+
+    //↓计算做要做多少天
+    } else if (stepRecord == "time-1") {
+      wx.setStorageSync("stepRecord", "time-2");
+      wx.setStorageSync("perTime", data);
+      wx.navigateTo({
+        url: '../cal/cal',
+      })
+    } else if (stepRecord == "time-2") {
+      wx.setStorageSync("stepRecord", "time-3");
+      wx.setStorageSync("machNum", data);
+      wx.navigateTo({
+        url: '../cal/cal',
+      })
+    } else if (stepRecord == "time-3") {
+      wx.setStorageSync("stepRecord", "time-4");
+      wx.setStorageSync("cloNum", data);
       wx.navigateTo({
         url: '../result/result',
       })

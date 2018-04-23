@@ -5,14 +5,26 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    result: "",
+    perTime: "",
+    finTime: "",
+    cloNum: "",
+    machNum: ""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var perTime = wx.getStorageSync("perTime");
+    var finTime = wx.getStorageSync("finTime");
+    var cloNum = wx.getStorageSync("cloNum");
+    var machNum = wx.getStorageSync("machNum");
+    
+    this.setData({ "perTime": perTime});
+    this.setData({ "finTime": finTime});
+    this.setData({ "cloNum": cloNum});
+    this.setData({ "machNum": machNum})
   },
 
   /**
@@ -40,7 +52,14 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+    var stepRecord = wx.getStorageSync('stepRecord');
+    if (stepRecord == "mac-4"){
+      wx.setStorageSync("stepRecord", "mac-3");
+    } else if (stepRecord == "clo-4"){
+      wx.setStorageSync("stepRecord", "clo-3");
+    } else if (stepRecord == "time-4"){
+      wx.setStorageSync("stepRecord", "time-3");
+    }
   },
 
   /**
@@ -63,4 +82,5 @@ Page({
   onShareAppMessage: function () {
   
   }
+
 })
