@@ -18,22 +18,26 @@
 }
 
 .btnGroup {
-  height: 15%;
-  font-size: 200%;
+  height: 20%;
+}
+
+.btn {
+  height: 90%;
+  font-size: 100%;
 }
 
 .blue {
-    color: #d9eef7;
+    color: #fff;
     background-color: #0095cd;
 }
 
 .orange {
-    color:  #d9eef7;
+    color:  #fff;
     background: #f78d1d;
 }
 
 .pink {
-  color:  #d9eef7;
+  color:  #fff;
   background: #EE6AA7;
 }
 

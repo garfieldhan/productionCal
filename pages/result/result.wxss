@@ -1,1 +1,37 @@
 /* pages/result/result.wxss */
+.content {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ccc;
+    font-family: "Microsoft YaHei";
+    overflow-x: hidden;
+    font-size: 100%;
+}
+
+.font {
+  font-size: 200%;
+  width: 100%;
+
+}
+
+.blue {
+    color: #fff;
+    background-color: #0095cd;
+}
+
+.orange {
+    color:  #fff;
+    background: #f78d1d;
+}
+
+.pink {
+  color:  #fff;
+  background: #EE6AA7;
+}
+
+.brown {
+  color:  #fff;
+  background: #8B1A1A;
+}

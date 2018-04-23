@@ -77,6 +77,8 @@ Page({
    * 生命周期函数--监听页面卸载(页面关闭)
    */
   onUnload: function () {
+    wx.vibrateShort({
+    })
     var stepRecord = wx.getStorageSync('stepRecord');
     if (stepRecord == "mac-3") {
       wx.setStorageSync("stepRecord", "mac-2");
@@ -115,6 +117,8 @@ Page({
   },
 
   clickBtn: function (event) {
+    wx.vibrateShort({
+    })
     var inputData = event.target.id;
     var screenNum = this.data.screenData;  //获取当前屏幕上的数字
     if (inputData == this.data.idb) {  //如果操作是退格←
@@ -137,6 +141,8 @@ Page({
   },
 
   goto: function () {
+    wx.vibrateShort({
+    })
     var stepRecord = wx.getStorageSync('stepRecord');
     var data = this.data.screenData;
 

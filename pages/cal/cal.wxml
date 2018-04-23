@@ -1,6 +1,6 @@
 <!--计算页面-->
 <view class="content">
-  <view class="layout-top" style="font-size:180%">
+  <view class="layout-top">
     {{titleMsg}}
   </view>
     

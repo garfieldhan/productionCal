@@ -18,8 +18,10 @@ Page({
   },
 
   calMac: function(){
+    wx.vibrateShort({
+    })
     var titleText = this.data.titleMsg;
-    titleText="请输入一件衣服的时间";
+    titleText="请输入一件衣服的时间(分钟):";
     this.setData({"titleMsg": titleText});
     wx.setStorageSync("titleMsg", this.data.titleMsg);
     wx.setStorageSync("stepRecord", "mac-1");  //记录到达的页面数
@@ -29,8 +31,10 @@ Page({
   },
 
   calClo: function () {
+    wx.vibrateShort({
+    })
     var titleText = this.data.titleMsg;
-    titleText = "请输入一件衣服的时间:";
+    titleText = "请输入一件衣服的时间(分钟):";
     this.setData({ "titleMsg": titleText });
     wx.setStorageSync("titleMsg", this.data.titleMsg);
     wx.setStorageSync("stepRecord", "clo-1");  //记录到达的页面数
@@ -40,8 +44,10 @@ Page({
   },
 
   calTime: function () {
+    wx.vibrateShort({
+    })
     var titleText = this.data.titleMsg;
-    titleText = "请输入一件衣服的时间:";
+    titleText = "请输入一件衣服的时间(分钟):";
     this.setData({ "titleMsg": titleText });
     wx.setStorageSync("titleMsg", this.data.titleMsg);
     wx.setStorageSync("stepRecord", "time-1");  //记录到达的页面数
