@@ -41,6 +41,12 @@
   background: #EE6AA7;
 }
 
+.green {
+  color:  #fff;
+  background: #32CD32;
+}
+
 .brown {
   color: #8B1A1A;
 }
+
