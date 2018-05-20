@@ -85,8 +85,9 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    wx.vibrateShort({
-    })
+    //使手机发生轻微震动
+    //wx.vibrateShort({
+    //})
     var stepRecord = wx.getStorageSync('stepRecord');
     if (stepRecord == "mac-4"){
       wx.setStorageSync("stepRecord", "mac-3");

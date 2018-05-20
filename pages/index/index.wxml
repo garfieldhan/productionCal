@@ -12,10 +12,10 @@
   <view class="btnGroup">
     <button class="pink btn" bindtap="calTime">计算要多久才能完成</button>
   </view>
-  <!-- <view class="btnGroup">
+  <view class="btnGroup">
     <button class="green btn" bindtap="calTime">计算一天一夜的产值</button>
-  </view> -->
-  <!-- <view class="btnGroup">
-    <button bindtap="scanNum">扫一扫</button>
-  </view> -->
+  </view>
+  <view class="btnGroup">
+    <button bindtap="scanNum" class="red btn">扫一扫出货</button>
+  </view>
 </view>

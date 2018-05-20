@@ -46,6 +46,11 @@
   background: #32CD32;
 }
 
+.red {
+  color:  #fff;
+  background: #ff0000;
+}
+
 .brown {
   color: #8B1A1A;
 }

@@ -60,11 +60,11 @@ Page({
    */
   onShow: function () {
     var stepRecord = wx.getStorageSync('stepRecord');
-    console.log("=========当前是第" + stepRecord + "步===============");
-    console.log("每件时间:" + wx.getStorageSync("perTime"));
-    console.log("货期:" + wx.getStorageSync("finTime"));
-    console.log("总件数:" + wx.getStorageSync("cloNum"));
-    console.log("开机台数:" + wx.getStorageSync("machNum"));
+    //console.log("=========当前是第" + stepRecord + "步===============");
+    //console.log("每件时间:" + wx.getStorageSync("perTime"));
+    //console.log("货期:" + wx.getStorageSync("finTime"));
+    //console.log("总件数:" + wx.getStorageSync("cloNum"));
+    //console.log("开机台数:" + wx.getStorageSync("machNum"));
   },
 
   /**
@@ -77,8 +77,9 @@ Page({
    * 生命周期函数--监听页面卸载(页面关闭)
    */
   onUnload: function () {
-    wx.vibrateShort({
-    })
+    //使手机发生轻微震动
+    //wx.vibrateShort({
+    //})
     var stepRecord = wx.getStorageSync('stepRecord');
     if (stepRecord == "mac-3") {
       wx.setStorageSync("stepRecord", "mac-2");
@@ -117,8 +118,9 @@ Page({
   },
 
   clickBtn: function (event) {
-    wx.vibrateShort({
-    })
+    //使手机发生轻微震动
+    //wx.vibrateShort({
+    //})
     var inputData = event.target.id;
     var screenNum = this.data.screenData;  //获取当前屏幕上的数字
     if (inputData == this.data.idb) {  //如果操作是退格←
@@ -141,8 +143,9 @@ Page({
   },
 
   goto: function () {
-    wx.vibrateShort({
-    })
+    //使手机发生轻微震动
+    //wx.vibrateShort({
+    //})
     var stepRecord = wx.getStorageSync('stepRecord');
     var data = this.data.screenData;
 
